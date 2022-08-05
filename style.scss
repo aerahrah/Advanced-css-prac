@@ -1,0 +1,123 @@
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+*,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    padding: 3rem;
+}
+.header{
+    height: 95vh;
+    line-height: 1.7;
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)),
+    url(img/hero-small.jpg);
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    &__logo-container{
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    &__logo{
+        height: 3.5rem;
+    }
+    &__text-container{
+        position: absolute;
+        top:40%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+}
+.heading-primary{
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    color: $color-white;
+    font-weight: 400;
+    backface-visibility: hidden;
+    &--main{
+        font-size: 6rem;
+        letter-spacing: 3.5rem;
+        display: block;
+        animation: 400ms moveInLeft;
+    }
+    &--sub{
+        font-size: 2rem;
+        letter-spacing: 1.74rem;
+        display: block;
+        animation: 400ms moveInRight;
+    }
+}
+.btn{
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 1.6rem;
+    text-align: center;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    border-radius: 100px;
+    color: $color-grey-dark;
+    &.btn--white{
+        background-color: $color-white;
+    }
+    &:link,:visited{
+        color: $color-grey-dark;
+    }
+}
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    75%{
+        transform: translateX(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    75%{
+        transform: translateX(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

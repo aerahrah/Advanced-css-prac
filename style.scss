@@ -66,6 +66,7 @@ body{
     color: $color-white;
     font-weight: 400;
     backface-visibility: hidden;
+    transition: 200ms ease-out;
     &--main{
         font-size: 6rem;
         letter-spacing: 3.5rem;
@@ -80,6 +81,7 @@ body{
     }
 }
 .btn{
+    transition: all 200ms;
     text-transform: uppercase;
     display: inline-block;
     font-size: 1.6rem;
@@ -88,11 +90,35 @@ body{
     padding: 1.5rem 4rem;
     border-radius: 100px;
     color: $color-grey-dark;
-    &.btn--white{
+
+
+    &--white{
         background-color: $color-white;
     }
+
+    &--animated{
+        animation: 400ms moveInUpward 500ms;
+        animation-fill-mode: backwards;
+    }
+
     &:link,:visited{
         color: $color-grey-dark;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    
+    &:active {
+        outline: none;
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
     }
 }
 @keyframes moveInLeft{
@@ -119,5 +145,15 @@ body{
     100%{
         opacity: 1;
         transform: translateX(0);
+    }
+}
+@keyframes moveInUpward{
+    0%{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
     }
 }

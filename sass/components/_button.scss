@@ -1,26 +1,23 @@
 .btn{
-    transition: all 200ms;
-    text-transform: uppercase;
-    display: inline-block;
-    font-size: 1.6rem;
-    text-align: center;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    border-radius: 100px;
-    color: $color-grey-dark;
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all 200ms;
+        position: relative;
+        font-size: $default-font-size;
 
-
-    &--white{
-        background-color: $color-white;
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
     }
-
     &--animated{
         animation: 400ms moveInUpward 500ms;
         animation-fill-mode: backwards;
-    }
-
-    &:link,&:visited{
-        color: $color-grey-dark;
     }
 
     &:hover {
@@ -37,6 +34,15 @@
         outline: none;
         transform: translateY(-1px);
         box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+    }
+    &--white{
+        background-color: $color-white;
+        color: $color-grey-dark;
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
     }
 }
 .btn-text{

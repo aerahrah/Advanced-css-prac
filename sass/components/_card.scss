@@ -5,21 +5,20 @@
     height: 52rem;
 
     &__side{
-        text-align: center;
-        font-size: 2rem;
-        
-        transition: all 800ms ease;
         height: 52rem;
+        transition: all .8s ease;
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        cursor: pointer;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         border-radius: 3px;
-        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+        overflow: hidden;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+        cursor: pointer;
 
+        
         &--front{
             background-color: $color-grey-light-1;
         }
@@ -105,6 +104,28 @@
                     border-bottom: 1px solid $color-grey-light-2;
                 }
             }
+        }
+    }
+    &__cta{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        text-align: center;
+    }
+    &__price{
+        &-box{
+            text-align: center;
+            color: $color-white;
+            margin-bottom: 8rem;
+        }
+        &-only{
+            font-size: 1.4rem;
+        }
+        &-value{
+            font-size: 6rem;
+            font-weight: 100;
         }
     }
 }
